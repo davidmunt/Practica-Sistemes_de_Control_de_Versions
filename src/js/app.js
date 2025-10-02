@@ -1,6 +1,7 @@
 //funcion para cambiar el contenido del p
 function changeHTMLContent() {
-  document.getElementById("texto").innerHTML = "El texto ha sido cambiado";
+  document.getElementById("texto").innerHTML =
+    "El texto ha sido cambiado a: En esta materia aprenderemos sobre el Despliegue de aplicaciones Web";
 }
 
 //funcion para cambiar el atributo src de la imagen
