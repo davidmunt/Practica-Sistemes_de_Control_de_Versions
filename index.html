@@ -1,10 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica - Sistema de control de versiones</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 40px;
+        background-color: #fafafa;
+        color: #333;
+        line-height: 1.6;
+      }
+      h1 {
+        text-align: center;
+        color: #004aad;
+      }
+      h2 {
+        color: #004aad;
+        margin-top: 40px;
+      }
+      p {
+        margin: 15px 0;
+      }
+      img {
+        display: block;
+        margin: 15px auto;
+        max-width: 90%;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+      }
+      code {
+        background-color: #eee;
+        padding: 2px 5px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+      .section {
+        background: #fff;
+        border: 1px solid #ddd;
+        padding: 20px 30px;
+        border-radius: 10px;
+        margin-bottom: 40px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+    </style>
   </head>
   <body>
-    <h1>Bienvenido a la página de usuario</h1>
+    <h1>Práctica - Sistema de control de versiones</h1>
+
+    <div class="section">
+      <h2>Usuario 1</h2>
+      <p>El usuario1 clona el repositorio de GitHub recién creado y ejecuta el comando <code>git flow init</code>:</p>
+      <img src="assets/imgs/1.png" alt="Ejecución de git flow init por el usuario1" />
+
+      <p>Después el usuario1 se mueve a la rama <code>develop</code> con el comando <code>git checkout develop</code>, crea la estructura del proyecto, añade el código necesario a <code>index.html</code> y crea <code>app.js</code>.</p>
+
+      <p>Por último, añade los cambios al área de preparación usando el comando <code>git add .</code>, crea un commit con <code>git commit -m "mensaje"</code> y sube los cambios al repositorio GitHub con <code>git push origin develop</code>.</p>
+      <img src="assets/imgs/3.png" alt="Subida de cambios del usuario1" />
+    </div>
+
+    <div class="section">
+      <h2>Usuario 2</h2>
+      <p>El usuario2 clona el repositorio de GitHub con los cambios hechos por el usuario1 y vuelve a ejecutar el comando <code>git flow init</code>.</p>
+
+      <p>Después ejecuta el comando <code>git flow feature start contingutHTML</code>, que creará una nueva rama llamada <b>feature/contingutHTML</b>.</p>
+      <img src="assets/imgs/4.png" alt="Creación de la feature contingutHTML" />
+
+      <p>A continuación, el usuario2 añade el contenido necesario al HTML y JS mediante <code>git add</code> y <code>git commit -m "mensaje"</code>.</p>
+      <img src="assets/imgs/5.png" alt="Finalización de feature contingutHTML" />
+      <img src="assets/imgs/6.png" alt="Finalización de feature contingutHTML" />
+      <p>Para terminar la feature usa <code>git flow feature finish contingutHTML</code>, lo que fusiona los cambios en la rama <b>develop</b>.</p>
+      <img src="assets/imgs/7.png" alt="Finalización de feature contingutHTML" />
+
+      <p>Estos pasos se repiten para la feature: <b>feature/atributsHTML</b></p>
+      <p>Por último subimos los cambios al repositorio GitHub con el comando <code>git push origin develop</code></p>
+    </div>
+
+    <div class="section">
+      <h2>Usuario 3</h2>
+      <p>El usuario3 vuelve a hacer los mismos pasos que el usuario2 para iniciar el proyecto<code>git clone</code> y <code>git flow init</code> . A continuación vuelve a usar los pasos del usuario2 para crear la feature: <b>feature/estilsCSS</b></p>
+      <img src="assets/imgs/8.png" alt="Feature estilsCSS del usuario3" />
+
+      <p>Y crea la release mediante: <code>git flow release start v1.0</code> y <code>git flow release finish v1.0</code>, para crear la release y terminarla:</p>
+      <img src="assets/imgs/9.png" alt="Creación de la release v1.0" />
+      <img src="assets/imgs/10.png" alt="Creación de la release v1.0" />
+      <p>Y por último usamos el comando <code>git push origin develop</code>para subir los cambios al repositorio GitHub</p>
+    </div>
+
+    <div class="section">
+      <h2>Usuario 1</h2>
+      <p>El usuario1 hara el comando git pull origin develop y hará el comando<code>git flow hotfix start milloresV_1_0</code>.</p>
+      <p>Tras realizar los ajustes, ejecuta <code>git flow hotfix finish milloresV_1_0</code>, lo que integra los cambios en <code>main</code> y <code>develop</code> y crea una nueva etiqueta de versión.</p>
+      <img src="assets/imgs/11.png" alt="Hotfix realizado por el usuario1" />
+      <img src="assets/imgs/12.png" alt="Hotfix realizado por el usuario1" />
+      <p>Mediante este comando: <code>git log --oneline --graph --decorate --all</code>podemos ver los cambios que se van haciendo con las features, commits, hotfix, etc.</p>
+      <img src="assets/imgs/13.png" alt="Hotfix realizado por el usuario1" />
+    </div>
+
+    <footer style="text-align: center; margin-top: 40px; color: #555">
+      <p>
+        Repositorio GitHub:
+        <a href="https://github.com/davidmunt/Practica-Sistemes_de_Control_de_Versions" target="_blank"> davidmunt/Practica-Sistemes_de_Control_de_Versions </a>
+      </p>
+    </footer>
   </body>
 </html>
